@@ -24,11 +24,11 @@
         <Reference Include="Assembly-CSharp">
             <HintPath>E:\SteamLibrary\steamapps\common\Lethal Company\Lethal Company_Data\Managed\Assembly-CSharp.dll</HintPath>
         </Reference>
+        <Reference Include="Unity.InputSystem">
+          <HintPath>E:\SteamLibrary\steamapps\common\Lethal Company\Lethal Company_Data\Managed\Unity.InputSystem.dll</HintPath>
+        </Reference>
         <Reference Include="UnityEngine">
             <HintPath>E:\SteamLibrary\steamapps\common\Lethal Company\Lethal Company_Data\Managed\UnityEngine.dll</HintPath>
-        </Reference>
-        <Reference Include="UnityEngine.ClusterInputModule">
-          <HintPath>E:\SteamLibrary\steamapps\common\Lethal Company\Lethal Company_Data\Managed\UnityEngine.ClusterInputModule.dll</HintPath>
         </Reference>
     </ItemGroup>
 </Project>
