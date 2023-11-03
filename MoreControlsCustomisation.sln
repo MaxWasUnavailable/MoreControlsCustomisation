@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoreControlsCustomisation", "MoreControlsCustomisation\MoreControlsCustomisation.csproj", "{FDC7AD72-EB70-45B7-956F-040D16B3CE78}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FDC7AD72-EB70-45B7-956F-040D16B3CE78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDC7AD72-EB70-45B7-956F-040D16B3CE78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDC7AD72-EB70-45B7-956F-040D16B3CE78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDC7AD72-EB70-45B7-956F-040D16B3CE78}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
