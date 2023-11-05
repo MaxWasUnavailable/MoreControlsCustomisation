@@ -9,7 +9,7 @@ namespace MoreControlsCustomisation.Patches;
 ///     Harmony patches for the <c>PlayerControllerB</c> class.
 /// </summary>
 [HarmonyPatch(typeof(PlayerControllerB))]
-public class PatchInitializeGame
+public class PatchPlayerControllerB
 {
     /// <summary>
     ///     Patch the <c>PlayerControllerB</c> CalculateSmoothLookingInput method.
