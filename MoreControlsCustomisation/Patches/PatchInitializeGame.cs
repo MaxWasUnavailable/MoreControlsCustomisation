@@ -21,9 +21,13 @@ public class PatchInitializeGame
 
         var playerActions = __instance.playerActions;
 
-        var m_Movement_Look = Traverse.Create(playerActions).Field("m_Movement_Look"); // Movement/Look[/Mouse/delta]
+        var m_Movement_Look =
+            Traverse.Create(playerActions).Field<InputAction>("m_Movement_Look"); // Movement/Look[/Mouse/delta]
         var m_Movement_SwitchItem =
-            Traverse.Create(playerActions).Field("m_Movement_SwitchItem"); // Movement/SwitchItem[/Mouse/scroll/y]
+            Traverse.Create(playerActions)
+                .Field<InputAction>("m_Movement_SwitchItem"); // Movement/SwitchItem[/Mouse/scroll/y]
+        var applyBindingOverrideMethod =
+            typeof(InputAction).GetMethod("ApplyBindingOverride", new[] { typeof(InputBinding) });
 
         Plugin.Logger.LogDebug("Applying binding overrides...");
 
@@ -32,8 +36,6 @@ public class PatchInitializeGame
         {
             Plugin.Logger.LogDebug("Inverting Y axis...");
 
-            var applyBindingOverrideMethod = m_Movement_Look.GetType().GetMethod("ApplyBindingOverride");
-            // TODO: ApplyBindingOverride is null --> Find fix
             applyBindingOverrideMethod.Invoke(m_Movement_Look,
                 new object[] { new InputBinding { overrideProcessors = "invertVector2(invertX=false,invertY=true)" } });
 
@@ -42,11 +44,8 @@ public class PatchInitializeGame
 
         // If scroll direction inverted, apply binding override
         if (Plugin.Instance.IsInvertScrollDirection.Value)
-        {
-            var applyBindingOverrideMethod = m_Movement_SwitchItem.GetType().GetMethod("ApplyBindingOverride");
             applyBindingOverrideMethod.Invoke(m_Movement_SwitchItem,
                 new object[] { new InputBinding { overrideProcessors = "invertVector2(invertX=false,invertY=true)" } });
-        }
 
         Plugin.Logger.LogInfo("Patch applied!");
     }
