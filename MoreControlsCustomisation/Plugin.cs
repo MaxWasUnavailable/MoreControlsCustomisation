@@ -15,7 +15,7 @@ namespace MoreControlsCustomisation
 
         public ConfigEntry<bool> IsInvertYAxis { get; private set; }
 
-        // public ConfigEntry<bool> IsInvertScrollDirection { get; private set; }
+        public ConfigEntry<bool> IsInvertScrollDirection { get; private set; }
 
         private Harmony _harmony;
         private bool _isPatched;
@@ -32,8 +32,8 @@ namespace MoreControlsCustomisation
             IsInvertYAxis = Config.Bind("General", "InvertYAxis", false, "Invert Y axis");
             Logger.LogInfo($"Invert Y axis loaded from config: {IsInvertYAxis.Value}");
             
-            // IsInvertScrollDirection = Config.Bind("General", "InvertScrollDirection", false, "Invert scroll direction");
-            // Logger.LogInfo($"Invert scroll direction loaded from config: {IsInvertScrollDirection.Value}");
+            IsInvertScrollDirection = Config.Bind("General", "InvertScrollDirection", false, "Invert scroll direction");
+            Logger.LogInfo($"Invert scroll direction loaded from config: {IsInvertScrollDirection.Value}");
             
             // Patch using Harmony
             PatchAll();
